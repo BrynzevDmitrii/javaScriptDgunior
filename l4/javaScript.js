@@ -1,17 +1,26 @@
 
-//#1
-function Div( src ) {
-    var keys = 'единицы десятки сотни'.split(' ');
-    var src = (src+'')||'0';
-    var div = src.split('');
-    for (var i = keys.length, ln = div.length; i--;){
-        this[keys[i]] = (+div[ln - 1 - i])||0;
-    };
-    
-};
-console.log(new Div(543));
-console.log(new Div(54));
-console.log(new Div(5));
+//#
+let userNumber = {
+        number:+prompt('введите число от 1 до 999'),
+        units: 0,
+        tens: 0,
+        hundreds: 0,
+        
+        };
+
+if (userNumber.number <= 9){
+    userNumber.units = userNumber.number;
+        } else if (userNumber.number <= 999){
+            userNumber.units = userNumber.number % 10;
+            userNumber.tens = userNumber.number / 10 % 10;
+            userNumber.hundreds = userNumber.number / 100 % 10;
+        }else if (userNumber.number = 0||userNumber.number > 999){
+            console.log('Вы ввели число за диапазоном 1 - 999')
+        }else(isNaN(userNumber.number));{
+            console.log('Ошибка: параметр не является числом')};
+        console.log(userNumber);
+        
+
 
 //#2
 
