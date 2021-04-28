@@ -1,5 +1,5 @@
 function openImage(event) {
-    console.log(event);
+    
 
     /* получаем div элемент галерии */
     const gallery = document.getElementsByClassName("gallery")[0];
@@ -13,6 +13,7 @@ function openImage(event) {
     /* получаем data-атрибут с номером картинки */
 	const seed = target.dataset.seed;
 
+
     /* если номер пустой, то прерываем выполнение */
 
     /* создаем картинку */
@@ -22,28 +23,22 @@ function openImage(event) {
     image.id  = `image-${seed}`;
     image.src = `https://picsum.photos/seed/${seed}/800`;
     image.alt = `Изображение ${seed}` ;
-    
+    image.onerror = function(){alert('картинка не существует')};
 
-    const thumbnails = document.querySelectorAll(".thumbnails > img");
-	console.log(thumbnails);
     
     /* добавляем новый блок в галерею */
     gallery.appendChild(image);
-}
-
-function init() {
-    const images = document.querySelectorAll(".thumbnails > img");
-    
-    for (const trt of images) {
-        trt.addEventListener('error',function(){
-            alert("картинка,битая");
-    } 
-)
 };
 
 
-    for (let image of images) {
+function init() {
+    const images = document.querySelectorAll(".thumbnails > img");
+
+    console.log (images);
+
+    for (const image of images) {
         image.addEventListener('click', openImage);
     }
-}
+};
 window.addEventListener('load', init);
+
