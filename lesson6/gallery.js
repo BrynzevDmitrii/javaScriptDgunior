@@ -1,4 +1,9 @@
+
+function openImage(event) {
+    
+=======
 function openImag
+
 
 
     /* получаем div элемент галерии */
@@ -13,6 +18,9 @@ function openImag
     /* получаем data-атрибут с номером картинки */
 	const seed = target.dataset.seed;
 
+
+
+
     /* если номер пустой, то прерываем выполнение */
 
     /* создаем картинку */
@@ -22,6 +30,8 @@ function openImag
     image.id  = `image-${seed}`;
     image.src = `https://picsum.photos/seed/${seed}/800`;
     image.alt = `Изображение ${seed}` ;
+
+=======
 
     image.onerror = function(){alert('картинка не существует')};
 
@@ -42,6 +52,8 @@ function init() {
 };
 window.addEventListener('load', init);
 
+
+=======
 =======
     
 
@@ -68,3 +80,4 @@ function init() {
     }
 }
 window.addEventListener('load', init);
+
