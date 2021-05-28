@@ -1,8 +1,12 @@
 
 function openImage(event) {
     
-=======
+
+function openImage(event) {
+    
+
 function openImag
+
 
 
 
@@ -21,6 +25,9 @@ function openImag
 
 
 
+
+
+
     /* если номер пустой, то прерываем выполнение */
 
     /* создаем картинку */
@@ -29,9 +36,8 @@ function openImag
     /* добавляем атрибуты к картинке */
     image.id  = `image-${seed}`;
     image.src = `https://picsum.photos/seed/${seed}/800`;
-    image.alt = `Изображение ${seed}` ;
+    image.alt = `Изображение $
 
-=======
 
     image.onerror = function(){alert('картинка не существует')};
 
@@ -53,8 +59,9 @@ function init() {
 window.addEventListener('load', init);
 
 
-=======
-=======
+
+
+==============
     
 
     const thumbnails = document.querySelectorAll(".thumbnails > img");
@@ -80,4 +87,5 @@ function init() {
     }
 }
 window.addEventListener('load', init);
+
 
